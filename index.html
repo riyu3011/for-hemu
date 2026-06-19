@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Hemu </title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background: linear-gradient(to right, #74ebd5, #9face6);
+overflow-x:hidden;
+min-height:100vh;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+position:relative;
+}
+
+.hero h1{
+font-size:4rem;
+background:linear-gradient(90deg,#fff,#ffd700,#fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:glow 3s infinite;
+}
+
+@keyframes glow{
+50%{
+transform:scale(1.05);
+}
+}
+
+#typing{
+max-width:700px;
+margin-top:20px;
+font-size:1.2rem;
+}
+
+.btn{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4da6;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+section{
+padding:80px 10%;
+text-align:center;
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.box{
+width:120px;
+padding:20px;
+border-radius:20px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.box span{
+font-size:2rem;
+font-weight:bold;
+}
+
+.gift-box{
+width:180px;
+height:180px;
+background:#ff4da6;
+margin:auto;
+position:relative;
+border-radius:10px;
+cursor:pointer;
+}
+
+.gift-box::before{
+content:"";
+position:absolute;
+width:35px;
+height:180px;
+background:white;
+left:50%;
+transform:translateX(-50%);
+}
+
+.gift-box::after{
+content:"🎀";
+font-size:70px;
+position:absolute;
+top:-40px;
+left:50%;
+transform:translateX(-50%);
+}
+
+#giftMessage{
+display:none;
+font-size:1.4rem;
+margin-top:20px;
+}
+
+.cake{
+font-size:120px;
+cursor:pointer;
+}
+
+.card{
+background:rgba(255,255,255,.15);
+padding:25px;
+border-radius:20px;
+margin:15px;
+backdrop-filter:blur(15px);
+}
+
+.fireworks{
+font-size:80px;
+display:none;
+animation:boom 1s infinite;
+}
+
+@keyframes boom{
+50%{
+transform:scale(1.2);
+}
+}
+
+.toggle{
+position:fixed;
+right:20px;
+top:20px;
+border:none;
+padding:10px;
+border-radius:50%;
+cursor:pointer;
+}
+
+.dark{
+background:#121212;
+}
+
+.balloon{
+position:fixed;
+font-size:35px;
+animation:float linear infinite;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-120vh);
+}
+}
+</style>
+</head>
+
+<body>
+
+<button class="toggle" onclick="toggleMode()">🌙</button>
+
+<section class="hero">
+
+<h1>Happy Birthday Hemu 🎂</h1>
+
+<p id="typing"></p>
+
+<a href="#count">
+<button class="btn">Celebrate 🎉</button>
+</a>
+
+</section>
+
+<section id="count">
+
+<h2>⏳ Countdown</h2>
+
+<div class="countdown">
+
+<div class="box">
+<span id="days">00</span>
+<p>Days</p>
+</div>
+
+<div class="box">
+<span id="hours">00</span>
+<p>Hours</p>
+</div>
+
+<div class="box">
+<span id="minutes">00</span>
+<p>Minutes</p>
+</div>
+
+<div class="box">
+<span id="seconds">00</span>
+<p>Seconds</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>💌 Special Message For Hemu</h2>
+
+<p style="max-width:800px;margin:auto;line-height:2;">
+
+Happy Birthday, Hemu! 🎂💖
+
+You are one of the most amazing people I know.
+Thank you for always being there, for your support,
+your kindness, your patience and all the beautiful memories.
+
+May your life be filled with happiness, success,
+good health and endless smiles.
+
+Stay the wonderful person you are.
+
+✨ Wishing you a year full of joy and unforgettable moments. ✨
+
+Happy Birthday once again! 🎉🌸💖
+
+</p>
+
+</section>
+
+
+<section>
+
+<h2>🎁 Open Your Gift</h2>
+
+<div class="gift-box" onclick="openGift()"></div>
+
+<div id="giftMessage">
+
+🌸 Surprise! 🌸
+
+You are special, valuable and loved more than you know. 💖
+
+May all your dreams come true and may happiness
+always stay by your side. ✨
+
+</div>
+
+</section>
+
+<section>
+
+<h2>💌 Secret Letter</h2>
+
+<button class="btn" onclick="showLetter()">
+
+Read Letter 💖
+
+</button>
+
+<div id="letter"
+style="display:none;
+max-width:700px;
+margin:30px auto;
+line-height:2;
+font-size:1.1rem;">
+
+Dear Hemu,
+
+Thank you for being such an incredible friend.
+
+Life becomes easier when someone like you is around.
+Your support, your advice and your presence
+mean a lot.
+
+I hope this birthday brings you endless happiness,
+success and everything your heart wishes for.
+
+Happy Birthday! 🎂💖
+
+</div>
+
+</section>
+
+<section>
+
+<h2>🎂 Birthday Cake</h2>
+
+<div class="cake" onclick="cutCake()">
+
+🎂
+
+</div>
+
+<p id="cakeText">
+
+Click the cake to cut it 🍰
+
+</p>
+
+</section>
+
+
+<section>
+
+<h2>🌸 Birthday Wishes</h2>
+
+<div class="card">
+✨ May every day bring new happiness.
+</div>
+
+<div class="card">
+🎉 May success follow you everywhere.
+</div>
+
+<div class="card">
+💖 Keep smiling and shining forever.
+</div>
+
+<div class="card">
+🌷 May all your dreams come true.
+</div>
+
+</section>
+
+
+<section>
+
+<h2>🎆 Celebration Time</h2>
+
+<button class="btn" onclick="fireworks()">
+
+Launch Fireworks 🎇
+
+</button>
+
+<div class="fireworks" id="fire">
+
+🎆 🎇 🎆 🎇 🎆
+
+</div>
+
+</section>
+
+<footer
+style="padding:30px;
+text-align:center;
+background:rgba(0,0,0,.15);">
+
+Made With ❤️ For Hemu
+
+<br><br>
+
+🎂 Happy Birthday 🎂
+
+</footer>
+
+<script>
+
+const text =
+"Happy Birthday Hemu 💖 | Wishing you endless happiness, success and beautiful memories.";
+
+let i = 0;
+
+function typeWriter(){
+
+if(i < text.length){
+
+document.getElementById("typing").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,50);
+
+}
+
+}
+
+typeWriter();
+
+const target =
+new Date("June 25, 2026 00:00:00").getTime();
+
+setInterval(()=>{
+
+const now = new Date().getTime();
+
+const diff = target - now;
+
+const d =
+Math.floor(diff/(1000*60*60*24));
+
+const h =
+Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+
+const m =
+Math.floor((diff%(1000*60*60))/(1000*60));
+
+const s =
+Math.floor((diff%(1000*60))/1000);
+
+document.getElementById("days").innerHTML=d;
+document.getElementById("hours").innerHTML=h;
+document.getElementById("minutes").innerHTML=m;
+document.getElementById("seconds").innerHTML=s;
+
+},1000);
+
+
+function openGift(){
+
+document.getElementById("giftMessage")
+.style.display="block";
+
+}
+
+
+function showLetter(){
+
+document.getElementById("letter")
+.style.display="block";
+
+}
+
+
+function cutCake(){
+
+document.getElementById("cakeText")
+.innerHTML="🍰 Cake Cut Successfully! Happy Birthday Hemu 💖";
+
+}
+
+function fireworks(){
+
+document.getElementById("fire")
+.style.display="block";
+
+}
+
+
+
+function toggleMode(){
+
+document.body.classList.toggle("dark");
+
+}
+
+
+for(let i=0;i<30;i++){
+
+let balloon =
+document.createElement("div");
+
+balloon.classList.add("balloon");
+
+let emojis =
+["🎈","💖","🌸","✨","🎉"];
+
+balloon.innerHTML =
+emojis[Math.floor(Math.random()*emojis.length)];
+
+balloon.style.left =
+Math.random()*100 + "vw";
+
+balloon.style.animationDuration =
+(5 + Math.random()*6) + "s";
+
+document.body.appendChild(balloon);
+
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>
